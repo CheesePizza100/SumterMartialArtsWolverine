@@ -1,0 +1,3 @@
+﻿namespace SumterMartialArtsWolverine.Server.Api.Features.EmailTemplates.Queries.GetEmailTemplates;
+
+public record GetEmailTemplatesQuery;

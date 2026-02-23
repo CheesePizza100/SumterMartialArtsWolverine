@@ -1,0 +1,3 @@
+﻿namespace SumterMartialArtsWolverine.Server.Api.Features.Instructors.Queries.GetInstructorAvailability;
+
+public record GetInstructorAvailabilityQuery(int InstructorId);

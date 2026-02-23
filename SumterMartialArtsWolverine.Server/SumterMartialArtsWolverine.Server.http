@@ -1,0 +1,6 @@
+@SumterMartialArtsWolverine.Server_HostAddress = http://localhost:5163
+
+GET {{SumterMartialArtsWolverine.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

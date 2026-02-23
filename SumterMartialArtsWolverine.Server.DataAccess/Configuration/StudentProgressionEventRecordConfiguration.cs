@@ -1,0 +1,23 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using SumterMartialArtsWolverine.Server.Domain.Events;
+
+namespace SumterMartialArtsWolverine.Server.DataAccess.Configuration;
+
+public class StudentProgressionEventRecordConfiguration : IEntityTypeConfiguration<StudentProgressionEvent>
+{
+    public void Configure(EntityTypeBuilder<StudentProgressionEvent> builder)
+    {
+        builder.HasKey(e => e.EventId);
+
+        builder.HasIndex(e => new { e.StudentId, e.ProgramId, e.Version })
+            .HasDatabaseName("IX_StudentProgression_Stream");
+
+        builder.HasIndex(e => e.OccurredAt)
+            .HasDatabaseName("IX_StudentProgression_OccurredAt");
+
+        builder.Property(e => e.EventType).HasMaxLength(100).IsRequired();
+        builder.Property(e => e.EventData).IsRequired();
+        builder.Property(e => e.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
+    }
+}

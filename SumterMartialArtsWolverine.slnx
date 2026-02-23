@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="sumtermartialartswolverine.client/sumtermartialartswolverine.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="SumterMartialArtsWolverine.Server.DataAccess/SumterMartialArtsWolverine.Server.DataAccess.csproj" />
+  <Project Path="SumterMartialArtsWolverine.Server.Domain/SumterMartialArtsWolverine.Server.Domain.csproj" />
+  <Project Path="SumterMartialArtsWolverine.Server.Services/SumterMartialArtsWolverine.Server.Services.csproj" />
+  <Project Path="SumterMartialArtsWolverine.Server/SumterMartialArtsWolverine.Server.Api.csproj" />
+</Solution>

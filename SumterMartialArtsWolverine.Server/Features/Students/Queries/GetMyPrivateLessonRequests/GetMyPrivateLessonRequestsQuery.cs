@@ -1,0 +1,3 @@
+﻿namespace SumterMartialArtsWolverine.Server.Api.Features.Students.Queries.GetMyPrivateLessonRequests;
+
+public record GetMyPrivateLessonRequestsQuery(int StudentId);

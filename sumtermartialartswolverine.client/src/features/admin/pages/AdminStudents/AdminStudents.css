@@ -1,0 +1,722 @@
+﻿.admin-container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+    .header-section h1 {
+        margin: 0;
+    }
+
+.search-field {
+    width: 320px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+    .search-field:focus {
+        outline: none;
+        border-color: #1976d2;
+    }
+
+/* Buttons */
+.btn-primary-action {
+    padding: 0.5rem 1.25rem;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+    .btn-primary-action:hover {
+        background-color: #1565c0;
+    }
+
+.btn-accent {
+    padding: 0.5rem 1.25rem;
+    background-color: #7b1fa2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+    .btn-accent:hover {
+        background-color: #6a1b9a;
+    }
+
+.btn-secondary {
+    padding: 0.5rem 1.25rem;
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+    .btn-secondary:hover {
+        background-color: #e0e0e0;
+    }
+
+.btn-destructive-text {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    color: #d32f2f;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+    .btn-destructive-text:hover {
+        background-color: #fdecea;
+    }
+
+.btn-back {
+    padding: 0.4rem 0.75rem;
+    background: transparent;
+    border: none;
+    color: #1976d2;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+    .btn-back:hover {
+        text-decoration: underline;
+    }
+
+.btn-create-login {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    height: 32px;
+    background-color: #7b1fa2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+    .btn-create-login:hover {
+        background-color: #6a1b9a;
+    }
+
+/* Loading */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e0e0e0;
+    border-top-color: #1976d2;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error-message {
+    text-align: center;
+    padding: 2rem;
+    color: #d32f2f;
+}
+
+/* Table */
+.table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #e0e0e0;
+    background-color: #fafafa;
+}
+
+td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.875rem;
+    vertical-align: middle;
+}
+
+    td:last-child {
+        white-space: nowrap;
+    }
+
+.clickable-row {
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+    .clickable-row:hover {
+        background-color: #f5f5f5;
+    }
+
+.student-cell {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #e3f2fd;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+    .contact-info small {
+        color: #888;
+        font-size: 0.8rem;
+    }
+
+.programs-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.program-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.rank {
+    color: #1976d2;
+    font-weight: 500;
+}
+
+.attendance-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+    .attendance-info small {
+        color: #888;
+        font-size: 0.8rem;
+    }
+
+.login-status {
+    font-size: 0.8rem;
+    color: #388e3c;
+    font-weight: 500;
+}
+
+.no-data {
+    text-align: center;
+    padding: 3rem;
+    color: #999;
+}
+
+/* Detail View */
+.student-detail {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.back-button-container {
+    margin-bottom: 1rem;
+}
+
+.detail-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.student-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.avatar-large {
+    width: 64px;
+    height: 64px;
+    background-color: #e3f2fd;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.header-info h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.75rem;
+}
+
+.header-info p {
+    margin: 0.25rem 0;
+    color: #666;
+}
+
+.header-right {
+    text-align: right;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1976d2;
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.25rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #666;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+    .tab-btn:hover {
+        color: #1976d2;
+    }
+
+    .tab-btn.active {
+        color: #1976d2;
+        border-bottom-color: #1976d2;
+    }
+
+.tab-content {
+    padding: 1.5rem 0;
+}
+
+/* Program Cards */
+.program-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+    .program-card:last-child {
+        margin-bottom: 0;
+    }
+
+.program-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+    .program-header h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.25rem;
+    }
+
+.current-rank {
+    margin: 0;
+    color: #666;
+}
+
+.rank-badge {
+    color: #1976d2;
+    font-weight: 600;
+}
+
+.program-dates {
+    text-align: right;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+    .program-dates div {
+        margin-bottom: 0.25rem;
+    }
+
+.instructor-notes {
+    background-color: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+    .instructor-notes strong {
+        display: block;
+        color: #0d47a1;
+        margin-bottom: 0.5rem;
+    }
+
+    .instructor-notes p {
+        margin: 0;
+        color: #1565c0;
+    }
+
+/* Attendance section inside program card */
+.attendance-section {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+    .attendance-section h4 {
+        margin: 0 0 1rem 0;
+        color: #333;
+    }
+
+.attendance-stats-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.detail-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+/* Test Cards */
+.test-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.2s;
+}
+
+    .test-card:hover {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .test-card:last-child {
+        margin-bottom: 0;
+    }
+
+.test-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.test-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+    .test-title h4 {
+        margin: 0;
+        font-size: 1.125rem;
+    }
+
+.test-header p {
+    margin: 0;
+    color: #666;
+}
+
+.test-date {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.test-notes {
+    background-color: #f5f5f5;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: #555;
+}
+
+/* Chips */
+.chip {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.chip-pass {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.chip-fail {
+    background-color: #fdecea;
+    color: #c62828;
+}
+
+/* Attendance Stats */
+.attendance-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+    .stat-card.blue {
+        background-color: #e3f2fd;
+    }
+
+    .stat-card.green {
+        background-color: #e8f5e9;
+    }
+
+    .stat-card.purple {
+        background-color: #f3e5f5;
+    }
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card.blue .stat-number {
+    color: #1976d2;
+}
+
+.stat-card.green .stat-number {
+    color: #388e3c;
+}
+
+.stat-card.purple .stat-number {
+    color: #7b1fa2;
+}
+
+.stat-text {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+/* Attendance Pattern */
+.attendance-pattern {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+    .attendance-pattern h4 {
+        margin: 0 0 1rem 0;
+        font-size: 1rem;
+        color: #333;
+    }
+
+.pattern-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+    .pattern-row:last-child {
+        margin-bottom: 0;
+    }
+
+.pattern-label {
+    width: 130px;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.pattern-bar {
+    flex: 1;
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.pattern-fill {
+    height: 100%;
+    background-color: #1976d2;
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.pattern-value {
+    width: 80px;
+    text-align: right;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Attendance Note */
+.attendance-note {
+    background-color: #fff8e1;
+    border-left: 4px solid #fbc02d;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: #f57f17;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 1rem;
+    }
+
+    .header-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .search-field {
+        width: 100%;
+    }
+
+    .student-header {
+        flex-direction: column;
+    }
+
+    .header-right {
+        text-align: left;
+    }
+
+    .attendance-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .header-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+        .header-actions button {
+            width: 100%;
+            justify-content: center;
+        }
+
+    .pattern-label {
+        width: 100px;
+        font-size: 0.75rem;
+    }
+
+    .pattern-value {
+        width: 60px;
+        font-size: 0.75rem;
+    }
+}
