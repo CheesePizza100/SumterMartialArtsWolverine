@@ -56,7 +56,5 @@ jobs:
           app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ./publish
-
-  └── (existing) SQL Database  →  reused, firewall updated
        └── secrets stored in App Service Environment Variables
             └── (optionally) referenced from Key Vault
