@@ -1,0 +1,62 @@
+name: Deploy .NET API
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api/**'
+      - '.github/workflows/deploy-api.yml'
+
+env:
+  DOTNET_VERSION: '8.0.x'
+  PROJECT_PATH: './api/MyApp.Api'
+  MIGRATIONS_PROJECT: './api/MyApp.Infrastructure'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore
+        run: dotnet restore ${{ env.PROJECT_PATH }}
+
+      - name: Build
+        run: dotnet build ${{ env.PROJECT_PATH }} --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test ${{ env.PROJECT_PATH }} --configuration Release --no-build
+
+      - name: Install EF Core tools
+        run: dotnet tool install --global dotnet-ef
+
+      - name: Apply EF Core Migrations
+        run: |
+          dotnet ef database update \
+            --project ${{ env.MIGRATIONS_PROJECT }} \
+            --startup-project ${{ env.PROJECT_PATH }} \
+            --configuration Release
+        env:
+          ConnectionStrings__DefaultConnection: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
+
+      - name: Publish
+        run: dotnet publish ${{ env.PROJECT_PATH }} \
+          --configuration Release \
+          --output ./publish
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ./publish
+
+  └── (existing) SQL Database  →  reused, firewall updated
+       └── secrets stored in App Service Environment Variables
+            └── (optionally) referenced from Key Vault
