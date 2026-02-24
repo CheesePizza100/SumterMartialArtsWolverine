@@ -495,17 +495,21 @@ function AdminStudents() {
             {/* ?? Dialogs ?? */}
             {dialog.type === 'createStudent' && (
                 <CreateStudentDialog
-                    onSubmit={handleCreateStudent}
-                    onClose={closeDialog}
+                    onClose={(studentData) => {
+                        if (studentData) handleCreateStudent(studentData);
+                        closeDialog();
+                    }}
                 />
             )}
 
             {dialog.type === 'createLogin' && (
                 <CreateLoginDialog
-                    studentName={dialog.student.name}
+                    name={dialog.student.name}
                     suggestedUsername={dialog.student.email}
-                    onSubmit={(username) => handleCreateLogin(dialog.student.id, username)}
-                    onClose={closeDialog}
+                    onClose={(username) => {
+                        if (username) handleCreateLogin(dialog.student.id, username);
+                        closeDialog();
+                    }}
                 />
             )}
 
@@ -518,8 +522,10 @@ function AdminStudents() {
                         name: p.name,
                         currentRank: p.rank,
                     }))}
-                    onSubmit={handleRecordTest}
-                    onClose={closeDialog}
+                    onClose={(data) => {
+                        if (data) handleRecordTest(data);
+                        closeDialog();
+                    }}
                 />
             )}
 
@@ -528,8 +534,10 @@ function AdminStudents() {
                     studentId={selectedStudent.id}
                     studentName={selectedStudent.name}
                     availablePrograms={dialog.availablePrograms}
-                    onSubmit={handleEnrollProgram}
-                    onClose={closeDialog}
+                    onClose={(enrollmentData) => {
+                        if (enrollmentData) handleEnrollProgram(enrollmentData);
+                        closeDialog();
+                    }}
                 />
             )}
 
@@ -543,8 +551,10 @@ function AdminStudents() {
                         currentTotal: p.attendance?.total || 0,
                         currentLast30Days: p.attendance?.last30Days || 0,
                     }))}
-                    onSubmit={(result) => handleRecordAttendance(result.programId, result.classesAttended)}
-                    onClose={closeDialog}
+                    onClose={(data) => {
+                        if (data) handleRecordAttendance(data.programId, data.classesAttended);
+                        closeDialog();
+                    }}
                 />
             )}
 
