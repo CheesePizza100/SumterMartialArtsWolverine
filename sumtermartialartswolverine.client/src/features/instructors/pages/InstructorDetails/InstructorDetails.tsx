@@ -14,7 +14,6 @@ function InstructorDetails() {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [showToast, setShowToast] = useState(false);
     const { id } = useParams<{ id: string }>();
-    const navigate = useNavigate();
 
     useEffect(() => {
         loadInstructor();
