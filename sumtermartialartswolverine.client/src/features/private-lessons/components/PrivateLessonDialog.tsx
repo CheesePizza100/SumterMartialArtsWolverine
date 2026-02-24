@@ -38,7 +38,6 @@ function PrivateLessonDialog({ instructorId, instructorName, onClose }: PrivateL
     const [errors, setErrors] = useState<FormErrors>({});
     const [availableSlots, setAvailableSlots] = useState<LessonTime[]>([]);
     const [filteredSlots, setFilteredSlots] = useState<LessonTime[]>([]);
-    const [availableDates, setAvailableDates] = useState<Date[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState<string>();

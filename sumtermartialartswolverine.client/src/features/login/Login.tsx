@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FormEvent } from 'react';
+import type { FormEvent } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../core/context/AuthContext';
 import './Login.css';
