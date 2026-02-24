@@ -14,7 +14,7 @@ interface RecordTestDialogProps {
     onClose: (data?: any) => void;
 }
 
-function RecordTestDialog({ studentId, studentName, programs, onClose }: RecordTestDialogProps) {
+function RecordTestDialog({ studentName, programs, onClose }: RecordTestDialogProps) {
     const [selectedProgramId, setSelectedProgramId] = useState<number>();
     const [rankTested, setRankTested] = useState('');
     const [result, setResult] = useState<'Pass' | 'Fail'>('Pass');
