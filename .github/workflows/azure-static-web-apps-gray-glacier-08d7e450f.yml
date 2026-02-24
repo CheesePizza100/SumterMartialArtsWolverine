@@ -6,6 +6,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches: [main]
+  workflow_dispatch:  # enables manual trigger
 
 jobs:
   build_and_deploy_job:
@@ -41,5 +42,6 @@ jobs:
           app_location: "sumtermartialartswolverine.client/dist"
           output_location: ""
           skip_app_build: true
+
 
 
