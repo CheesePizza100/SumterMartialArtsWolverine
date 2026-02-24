@@ -13,7 +13,7 @@ interface EnrollProgramDialogProps {
     onClose: (enrollmentData?: { programId: number; programName: string; initialRank: string }) => void;
 }
 
-function EnrollProgramDialog({ studentId, studentName, availablePrograms, onClose }: EnrollProgramDialogProps) {
+function EnrollProgramDialog({ studentName, availablePrograms, onClose }: EnrollProgramDialogProps) {
     const [selectedProgramId, setSelectedProgramId] = useState<number>();
     const [initialRank, setInitialRank] = useState('White Belt');
     const [isSubmitting, setIsSubmitting] = useState(false);

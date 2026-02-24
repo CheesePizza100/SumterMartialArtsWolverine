@@ -15,7 +15,7 @@ interface RecordAttendanceDialogProps {
     onClose: (data?: { programId: number; classesAttended: number }) => void;
 }
 
-function RecordAttendanceDialog({ studentId, studentName, programs, onClose }: RecordAttendanceDialogProps) {
+function RecordAttendanceDialog({ studentName, programs, onClose }: RecordAttendanceDialogProps) {
     const [selectedProgramId, setSelectedProgramId] = useState<number>();
     const [classesAttended, setClassesAttended] = useState(1);
     const [isSubmitting, setIsSubmitting] = useState(false);

@@ -37,6 +37,7 @@ function PrivateLessonDialog({ instructorId, instructorName, onClose }: PrivateL
 
     const [errors, setErrors] = useState<FormErrors>({});
     const [availableSlots, setAvailableSlots] = useState<LessonTime[]>([]);
+    //const [availableDates, setAvailableDates] = useState<Date[]>([]);
     const [filteredSlots, setFilteredSlots] = useState<LessonTime[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -52,11 +53,11 @@ function PrivateLessonDialog({ instructorId, instructorName, onClose }: PrivateL
             setAvailableSlots(slots);
 
             // Extract unique dates from slots
-            const uniqueDates = [...new Set(
+            const availableDates = [...new Set(
                 slots.map(slot => new Date(slot.start).toDateString())
             )].map(dateStr => new Date(dateStr));
 
-            setAvailableDates(uniqueDates);
+            //setAvailableDates(availableDates);
             setIsLoading(false);
         } catch (err) {
             console.error('Error loading availability:', err);
