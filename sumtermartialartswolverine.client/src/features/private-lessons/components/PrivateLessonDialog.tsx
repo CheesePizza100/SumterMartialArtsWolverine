@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { privateLessonsService } from '../services/privateLessonsService';
 import type { LessonTime, PrivateLessonRequest } from '../models/private-lesson.model';
-import type { DateFilterUtil } from '../utils/dateFilter.util';
 import './PrivateLessonDialog.css';
 
 interface PrivateLessonDialogProps {

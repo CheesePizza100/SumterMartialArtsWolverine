@@ -1,8 +1,6 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import type { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../config/axiosConfig';
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5163/api';
 
 export interface User {
     userId: string;

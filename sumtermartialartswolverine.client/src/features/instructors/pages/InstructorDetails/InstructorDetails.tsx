@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { instructorsService } from "../../services/instructorsService";
 import type { Instructor } from "../../models/instructor.model";
 import BeltTimeline from "../../components/BeltTimeline/BeltTimeline";
