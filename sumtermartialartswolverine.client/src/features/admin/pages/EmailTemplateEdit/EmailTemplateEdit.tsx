@@ -1,7 +1,8 @@
-import { useState, useEffect, FormEvent } from 'react';
+import { useState, useEffect } from 'react';
+import type { FormEvent } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { emailTemplatesService } from '../../services/emailTemplatesService';
-import { EmailTemplateDetail } from '../../models/emailTemplate.model';
+import type { EmailTemplateDetail } from '../../models/emailTemplate.model';
 import './EmailTemplateEdit.css';
 
 function EmailTemplateEdit() {

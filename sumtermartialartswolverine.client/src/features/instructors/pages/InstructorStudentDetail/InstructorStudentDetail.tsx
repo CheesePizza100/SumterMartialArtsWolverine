@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { InstructorStudent } from '../../models/instructor.model';
+import type { InstructorStudent } from '../../models/instructor.model';
 import { instructorsService } from '../../services/instructorsService';
 import RecordTestDialog from '../../../admin/components/RecordTestDialog/RecordTestDialog';
 import RecordAttendanceDialog from '../../../admin/components/RecordAttendanceDialog/RecordAttendanceDialog';

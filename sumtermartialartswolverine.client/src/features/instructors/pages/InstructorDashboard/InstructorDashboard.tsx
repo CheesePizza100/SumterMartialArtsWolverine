@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { InstructorStudent } from './models/instructor.model';
-import { instructorsService } from './services/instructorsService';
+import type { InstructorStudent } from '../../models/instructor.model';
+import { instructorsService } from '../../services/instructorsService';
 import './InstructorDashboard.css';
 
 function InstructorDashboard() {

@@ -1,5 +1,5 @@
 import axiosInstance from '../../../core/config/axiosConfig';
-import { StudentProfile, UpdateContactInfoRequest, PrivateLessonRequest } from '../models/student.model';
+import type { StudentProfile, UpdateContactInfoRequest, PrivateLessonRequest } from '../models/student.model';
 
 const API_BASE = '/students';
 

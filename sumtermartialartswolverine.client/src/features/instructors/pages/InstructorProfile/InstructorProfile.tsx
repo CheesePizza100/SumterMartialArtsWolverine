@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { InstructorProfile as InstructorProfileType } from '../../models/instructor.model';
+import type { InstructorProfile as InstructorProfileType } from '../../models/instructor.model';
 import { instructorsService } from '../../services/instructorsService';
 import './InstructorProfile.css';
 

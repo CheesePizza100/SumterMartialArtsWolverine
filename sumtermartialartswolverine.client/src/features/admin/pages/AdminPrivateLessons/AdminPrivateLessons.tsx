@@ -1,6 +1,5 @@
 ﻿import { useState, useEffect } from 'react';
 import Toast from '../../../../shared/components/Toast/Toast';
-import ConfirmDialog from '../../../../shared/components/ConfirmDialog/ConfirmDialog';
 import RejectReasonDialog from '../../components/RejectionReasonDialog/RejectionReasonDialog';
 import { adminPrivateLessonsService } from '../../services/privateLessonsService';
 import type { PrivateLessonRequest } from '../../models/privateLessonRequest.model';

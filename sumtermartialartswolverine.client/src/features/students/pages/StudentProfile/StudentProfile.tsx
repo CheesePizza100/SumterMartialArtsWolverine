@@ -1,6 +1,7 @@
-import { useState, useEffect, FormEvent } from 'react';
+import { useState, useEffect } from 'react';
+import type { FormEvent } from 'react';
 import { studentService } from '../../services/studentService';
-import { StudentProfile as StudentProfileType } from '../../models/student.model';
+import type { StudentProfile as StudentProfileType } from '../../models/student.model';
 import './StudentProfile.css';
 
 function StudentProfile() {
