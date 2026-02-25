@@ -31,6 +31,7 @@
     <ProjectReference Include="..\sumtermartialartswolverine.client\sumtermartialartswolverine.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\SumterMartialArtsWolverine.Server.DataAccess\SumterMartialArtsWolverine.Server.DataAccess.csproj" />
     <ProjectReference Include="..\SumterMartialArtsWolverine.Server.Domain\SumterMartialArtsWolverine.Server.Domain.csproj" />
     <ProjectReference Include="..\SumterMartialArtsWolverine.Server.Services\SumterMartialArtsWolverine.Server.Services.csproj" />
   </ItemGroup>
