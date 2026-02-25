@@ -17,9 +17,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: List repo structure
-          run: ls -la && find . -name "*.sln" && find . -name "*.csproj"
       - uses: actions/checkout@v4
+
+      - name: List repo structure
+        run: ls -la && find . -name "*.sln" && find . -name "*.csproj"
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
