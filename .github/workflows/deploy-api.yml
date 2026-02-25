@@ -31,10 +31,10 @@ jobs:
         run: ls -la && find . -name "*.sln" && find . -name "*.csproj"
 
       - name: Restore
-        run: dotnet restore SumterMartialArtsWolverine.slnx
+        run: dotnet restore SumterMartialArtsWolverine.Server/SumterMartialArtsWolverine.Server.Api.csproj -p:SpaProxyEnabled=false
 
       - name: Build
-        run: dotnet build SumterMartialArtsWolverine.slnx --configuration Release --no-restore
+        run: dotnet build SumterMartialArtsWolverine.Server/SumterMartialArtsWolverine.Server.Api.csproj --configuration Release --no-restore -p:SpaProxyEnabled=false
 
       - name: Run database migrations
         run: |
@@ -50,6 +50,7 @@ jobs:
         run: dotnet publish SumterMartialArtsWolverine.Server/SumterMartialArtsWolverine.Server.Api.csproj \
           --configuration Release \
           --output ${{ github.workspace }}/publish
+          -p:SpaProxyEnabled=false
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
