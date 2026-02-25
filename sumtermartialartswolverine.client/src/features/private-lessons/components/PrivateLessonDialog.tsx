@@ -53,9 +53,9 @@ function PrivateLessonDialog({ instructorId, instructorName, onClose }: PrivateL
             setAvailableSlots(slots);
 
             // Extract unique dates from slots
-            const availableDates = [...new Set(
-                slots.map(slot => new Date(slot.start).toDateString())
-            )].map(dateStr => new Date(dateStr));
+            //const availableDates = [...new Set(
+            //    slots.map(slot => new Date(slot.start).toDateString())
+            //)].map(dateStr => new Date(dateStr));
 
             //setAvailableDates(availableDates);
             setIsLoading(false);

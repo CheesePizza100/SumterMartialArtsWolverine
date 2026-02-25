@@ -231,8 +231,10 @@ function AdminPrivateLessons() {
             {rejectingRequest && (
                 <RejectReasonDialog
                     studentName={rejectingRequest.studentName}
-                    onSubmit={handleRejectSubmit}
-                    onClose={() => setRejectingRequest(null)}
+                    onClose={(reason) => {
+                        if (reason) handleRejectSubmit(reason);
+                        setRejectingRequest(null);
+                    }}
                 />
             )}
 
