@@ -5,7 +5,6 @@ on:
     branches: [main]
     paths:
       - 'SumterMartialArtsWolverine.Server/**'
-      - 'SumterMartialArtsWolverine.Server.Api/**'
       - 'SumterMartialArtsWolverine.Server.DataAccess/**'
       - 'SumterMartialArtsWolverine.Server.Domain/**'
       - 'SumterMartialArtsWolverine.Server.Services/**'
@@ -28,10 +27,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore
-        run: dotnet restore SumterMartialArtsWolverine.sln
+        run: dotnet restore SumterMartialArtsWolverine.slnx
 
       - name: Build
-        run: dotnet build SumterMartialArtsWolverine.sln --configuration Release --no-restore
+        run: dotnet build SumterMartialArtsWolverine.slnx --configuration Release --no-restore
 
       - name: Run database migrations
         run: |
@@ -40,11 +39,11 @@ jobs:
           cd SumterMartialArtsWolverine.Server.DataAccess
           dotnet ef database update \
             --project . \
-            --startup-project ../SumterMartialArtsWolverine.Server.Api \
+            --startup-project ../SumterMartialArtsWolverine.Server \
             --connection "${{ secrets.AZURE_SQL_CONNECTION_STRING }}"
 
       - name: Publish
-        run: dotnet publish SumterMartialArtsWolverine.Server.Api/SumterMartialArtsWolverine.Server.Api.csproj \
+        run: dotnet publish SumterMartialArtsWolverine.Server/SumterMartialArtsWolverine.Server.Api.csproj \
           --configuration Release \
           --output ${{ github.workspace }}/publish
 
