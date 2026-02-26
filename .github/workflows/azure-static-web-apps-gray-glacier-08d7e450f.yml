@@ -33,7 +33,11 @@ jobs:
           echo "Length: ${#VITE_API_URL}"
         env:
           VITE_API_URL: ${{ secrets.API_BASE_URL }}
-          
+
+      - name: Clean dist
+        run: rm -rf dist
+        working-directory: ./sumtermartialartswolverine.client
+  
       - name: Build
         run: npm run build
         working-directory: ./sumtermartialartswolverine.client
@@ -49,6 +53,7 @@ jobs:
           app_location: "sumtermartialartswolverine.client/dist"
           output_location: ""
           skip_app_build: true
+
 
 
 
