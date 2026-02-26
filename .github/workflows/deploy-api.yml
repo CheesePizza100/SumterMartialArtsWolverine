@@ -49,10 +49,7 @@ jobs:
        #     --connection "$CONNECTION_STRING"
 
       - name: Publish
-        run: dotnet publish SumterMartialArtsWolverine.Server/SumterMartialArtsWolverine.Server.Api.csproj \
-          --configuration Release \
-          --output ${{ github.workspace }}/publish
-          -p:SpaProxyEnabled=false
+        run: dotnet publish SumterMartialArtsWolverine.Server/SumterMartialArtsWolverine.Server.Api.csproj --configuration Release --output ${{ github.workspace }}/publish -p:SpaProxyEnabled=false
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
