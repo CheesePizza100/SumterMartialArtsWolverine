@@ -27,6 +27,13 @@ jobs:
         run: npm ci
         working-directory: ./sumtermartialartswolverine.client
 
+      - name: Debug env
+        run: |
+          echo "API_BASE_URL secret is set: ${{ secrets.API_BASE_URL != '' }}"
+          echo "Length: ${#VITE_API_URL}"
+        env:
+          VITE_API_URL: ${{ secrets.API_BASE_URL }}
+          
       - name: Build
         run: npm run build
         working-directory: ./sumtermartialartswolverine.client
@@ -42,6 +49,7 @@ jobs:
           app_location: "sumtermartialartswolverine.client/dist"
           output_location: ""
           skip_app_build: true
+
 
 
 
